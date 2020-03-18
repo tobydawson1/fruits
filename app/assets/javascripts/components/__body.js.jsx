@@ -24,8 +24,8 @@ class Body extends React.Component {
       })
   }
   updatePost(post){
-    let newPost = this.state.postd.filter((f) => f.id !== post.id)
-    newPost.push(post)
+    let newPosts = this.state.posts.filter((f) => f.id !== post.id)
+    newPosts.push(post)
     this.setState({
       posts: newPosts
     })
@@ -42,7 +42,7 @@ class Body extends React.Component {
     })
   }
   deletePost(id){
-    newPosts = this.state.posts.filter((post) => post.id !== id)
+    let newPosts = this.state.posts.filter((post) => post.id !== id)
     this.setState({
       posts: newPosts
     })
