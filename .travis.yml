@@ -1,25 +1,7 @@
-language: ruby
+install:
+  - gem uninstall bundler
+  - gem install bundler --version '1.16.3'
+  - bundle install
+
 rvm:
-- 2.7.0
-# env:
-#   global:
-#   - CC_TEST_REPORTER_ID=808b625841bd445e56f4cf9b78a68718507d8135b7c74d7430cd9dcc2d70a41a
-services:
-  - postgresql
-before_script:
-  - gem install bundler:2.1.4
-  - bundle exec install
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  # - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  # - chmod +x ./cc-test-reporter
-  # - ./cc-test-reporter before-build
-# script:
-#   - bundle exec rspec
-# after_script:
-#   - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
-# deploy:
-#   provider: heroku
-#   app: acebook-offtherails
-#   on:
-#     repo: davmcgregor/acebook-off-the-rails
+  - 2.7.0
