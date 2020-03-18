@@ -1,18 +1,11 @@
 language: ruby
-
-install:
-  - gem uninstall bundler
-  - gem install bundler --version '1.16.3'
-  - bundle install
-
 rvm:
-  - 2.7.0
+- 2.7.0
 env:
   global:
   - CC_TEST_REPORTER_ID=72aee93eb26553b6fd8c42e9baee9a3c5215192f6bb25911688edcd693d4ea44
-  
 services:
-- postgresql
+  - postgresql
 before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
@@ -20,6 +13,6 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-- bundle exec rspec
+  - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
