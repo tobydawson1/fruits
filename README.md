@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/tobydawson1/fruits.svg?branch=master)](https://travis-ci.org/tobydawson1/fruits)
+[![Maintainability](https://api.codeclimate.com/v1/badges/68c20bea655cb15bf795/maintainability)](https://codeclimate.com/github/tobydawson1/fruits/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/68c20bea655cb15bf795/test_coverage)](https://codeclimate.com/github/tobydawson1/fruits/test_coverage)
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +28,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
