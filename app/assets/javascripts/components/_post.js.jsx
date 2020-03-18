@@ -24,8 +24,7 @@ render(){
     return(
     <div>
         {message}
-        <button>{this.state.editable? 'Submit' : 'Edit'}</button>
-        <button onClick={() => this.handleEdit()}></button>
+        <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
         <button onClick={() => this.props.handleDelete(this.props.post.id)}>Delete</button>
     </div>
     )      
