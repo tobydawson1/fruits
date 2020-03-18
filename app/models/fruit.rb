@@ -1,2 +1,2 @@
-class Fruit < ApplicationRecord
-end
+# class Fruit < ApplicationRecord
+# end

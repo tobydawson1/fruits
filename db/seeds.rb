@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-fruits = ['Mango', 'Pineapple', 'Passion fruit', 'Dragonfruit']
-fruits.each{|fruit| Fruit.create(name: fruit, description: "I am a delicious #{fruit}.")}
+posts = ['Hello World', 'This is Acebook', 'This used to be fruits', 'Now it is posts']
+posts.each{|post| Post.create(message: post, user_id: 1)}
