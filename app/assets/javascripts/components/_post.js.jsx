@@ -23,6 +23,7 @@ render(){
     let message = this.state.editable ? <input type='text' ref={input => this.message = input} defaultValue={this.props.post.message}/>:<p>{this.props.post.message}</p>
     return(
     <div>
+
         {message}
         <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
         <button onClick={() => this.props.handleDelete(this.props.post.id)}>Delete</button>

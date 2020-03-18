@@ -1,84 +1,84 @@
-// class Body extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//           fruits: []
-//         };
-//         this.handleFormSubmit = this.handleFormSubmit.bind(this)
-//         this.addNewFruit = this.addNewFruit.bind(this)
-//         this.handleDelete = this.handleDelete.bind(this)
-//         this.deleteFruit = this.deleteFruit.bind(this)
-//         this.handleUpdate = this.handleUpdate.bind(this);
-//         this.updateFruit = this.updateFruit.bind(this)
-//       }
-//     handleUpdate(fruit){
-//       fetch(`http://localhost:3000/api/v1/fruits/${fruit.id}`, 
-//       {
-//         method: 'PUT',
-//         body: JSON.stringify({fruit: fruit}),
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       }).then((response) => { 
-//           this.updateFruit(fruit)
-//         })
-//     }
-//     updateFruit(fruit){
-//       let newFruits = this.state.fruits.filter((f) => f.id !== fruit.id)
-//       newFruits.push(fruit)
-//       this.setState({
-//         fruits: newFruits
-//       })
-//     }
-//     handleDelete(id){
-//       fetch(`http://localhost:3000/api/v1/fruits/${id}`, 
-//       {
-//         method: 'DELETE',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       }).then((response) => { 
-//         this.deleteFruit(id)
-//       })
-//     }
-//     deleteFruit(id){
-//       newFruits = this.state.fruits.filter((fruit) => fruit.id !== id)
-//       this.setState({
-//         fruits: newFruits
-//       })
-//     }
+class Body extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        posts: []
+      };
+      this.handleFormSubmit = this.handleFormSubmit.bind(this)
+      this.addNewPost = this.addNewPost.bind(this)
+      this.handleDelete = this.handleDelete.bind(this)
+      this.deletePost = this.deletePost.bind(this)
+      this.handleUpdate = this.handleUpdate.bind(this);
+      this.updatePost = this.updatePost.bind(this)
+    }
+  handleUpdate(post){
+    fetch(`http://localhost:3000/api/v1/posts/${post.id}`, 
+    {
+      method: 'PUT',
+      body: JSON.stringify({post: post}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => { 
+        this.updatePost(post)
+      })
+  }
+  updatePost(post){
+    let newPosts = this.state.posts.filter((f) => f.id !== post.id)
+    newPosts.push(post)
+    this.setState({
+      posts: newPosts
+    })
+  }
+  handleDelete(id){
+    fetch(`http://localhost:3000/api/v1/posts/${id}`, 
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => { 
+      this.deletePost(id)
+    })
+  }
+  deletePost(id){
+    let newPosts = this.state.posts.filter((post) => post.id !== id)
+    this.setState({
+      posts: newPosts
+    })
+  }
 
-//     handleFormSubmit(name, description){
-//       console.log(name, description)
-//       let body = JSON.stringify({fruit: {name: name, description:   description} })
-//       fetch('http://localhost:3000/api/v1/fruits', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: body,
-//     }).then((response) => {return response.json()})
-//     .then((fruit)=>{
-//       this.addNewFruit(fruit)
-//     })
-//     }
-//     addNewFruit(fruit){
-//       this.setState({
-//         fruits: this.state.fruits.concat(fruit)
-//       })
-//     }
-//     componentDidMount(){
-//         fetch('/api/v1/fruits.json')
-//           .then((response) => {return response.json()})
-//           .then((data) => {this.setState({ fruits: data }) });
-//       }
-//     render(){
-//         return(
-//           <div>
-//             < NewFruit handleFormSubmit={this.handleFormSubmit}/> 
-//             <AllFruits fruits={this.state.fruits} handleDelete={this.handleDelete} handleUpdate = {this.handleUpdate}/>
+  handleFormSubmit(message){
+    console.log(message)
+    let body = JSON.stringify({post: {message: message} })
+    fetch('http://localhost:3000/api/v1/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: body,
+  }).then((response) => {return response.json()})
+  .then((post)=>{
+    this.addNewPost(post)
+  })
+  }
+  addNewPost(post){
+    this.setState({
+      posts: this.state.posts.concat(post)
+    })
+  }
+  componentDidMount(){
+      fetch('/api/v1/posts.json')
+        .then((response) => {return response.json()})
+        .then((data) => {this.setState({ posts: data }) });
+    }
+  render(){
+      return(
+        <div>
+          <NewPost handleFormSubmit={this.handleFormSubmit}/> 
+          <AllPosts posts={this.state.posts} handleDelete={this.handleDelete} handleUpdate = {this.handleUpdate}/>
 
-//           </div>
-//         )
-//       }
-//     }
+        </div>
+      )
+    }
+  }

@@ -1,7 +1,7 @@
 class Api::V1::PostsController < ApplicationController
     
     def index
-        render json: Post.all
+        render json: Post.all.reverse
     end
 
     def create
