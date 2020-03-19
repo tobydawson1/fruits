@@ -3,13 +3,13 @@ rvm:
 - 2.7.0
 env:
   global:
-  - CC_TEST_REPORTER_ID=72aee93eb26553b6fd8c42e9baee9a3c5215192f6bb25911688edcd693d4ea44
+  - CC_TEST_REPORTER_ID= "72aee93eb26553b6fd8c42e9baee9a3c5215192f6bb25911688edcd693d4ea44"
 services:
   - postgresql
 before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
-  - curl -fL https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -fL "https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64" > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
