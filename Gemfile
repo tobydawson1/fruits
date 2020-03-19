@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem "codeclimate-test-reporter", group: :test
 gem 'simplecov', '0.17.1', require: false, group: :test
 gem 'simplecov-console', require: false
 gem 'sass-rails', '~> 5.0'
