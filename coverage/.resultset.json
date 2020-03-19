@@ -1,0 +1,65 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tobydawson/Projects/fruits-app/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/models/fruit.rb": [
+        null,
+        null
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/models/post.rb": [
+        0,
+        0
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/controllers/home_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/controllers/api/v1/posts_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/tobydawson/Projects/fruits-app/app/helpers/application_helper.rb": [
+        0,
+        0
+      ]
+    },
+    "timestamp": 1584620822
+  }
+}
